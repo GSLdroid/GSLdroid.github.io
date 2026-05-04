@@ -21,8 +21,23 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Giant Steps Learning</h1>
-            <p>Take bold strides in your educational journey ✨</p>
+            <p>Take bold strides in your educational journey</p>
             <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Bitcoin Price Tracker -->
+    <section class="btc-tracker">
+        <div class="btc-logo">
+            <div class="btc-circle">
+                <span class="btc-symbol">₿</span>
+            </div>
+        </div>
+        <div class="btc-info">
+            <h3>Bitcoin Price</h3>
+            <p class="btc-price" id="btcPrice">Loading...</p>
+            <p class="btc-currency">CAD</p>
+            <button class="btc-refresh" onclick="fetchBTCPrice()">Refresh</button>
         </div>
     </section>
 
@@ -71,5 +86,28 @@
             <p>&copy; 2026 Giant Steps Learning. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        async function fetchBTCPrice() {
+            const priceElement = document.getElementById("btcPrice");
+            priceElement.textContent = "Loading...";
+            
+            try {
+                const response = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=cad");
+                const data = await response.json();
+                const price = data.bitcoin.cad;
+                priceElement.textContent = "$" + price.toLocaleString("en-CA", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            } catch (error) {
+                priceElement.textContent = "Error loading price";
+                console.error("Error fetching BTC price:", error);
+            }
+        }
+
+        // Fetch price on page load
+        fetchBTCPrice();
+
+        // Auto-refresh every 60 seconds
+        setInterval(fetchBTCPrice, 60000);
+    </script>
 </body>
 </html>

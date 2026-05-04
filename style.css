@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
 }
@@ -80,6 +80,98 @@ nav {
 .cta-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Bitcoin Price Tracker */
+.btc-tracker {
+    background: linear-gradient(135deg, #f7931a 0%, #ffab40 100%);
+    padding: 3rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.btc-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btc-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2), inset 0 2px 10px rgba(0,0,0,0.1);
+    border: 8px solid #f7931a;
+    position: relative;
+}
+
+.btc-circle::before {
+    content: "";
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 3px solid #e88a1a;
+}
+
+.btc-symbol {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #f7931a;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.btc-info {
+    text-align: center;
+    color: #fff;
+}
+
+.btc-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.btc-price {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.btc-currency {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.btc-refresh {
+    background: #fff;
+    color: #f7931a;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btc-refresh:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.btc-refresh:active {
+    transform: translateY(0);
 }
 
 .section {
@@ -157,5 +249,28 @@ footer {
     
     .services-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .btc-tracker {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .btc-circle {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .btc-circle::before {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .btc-symbol {
+        font-size: 4rem;
+    }
+    
+    .btc-price {
+        font-size: 2rem;
     }
 }
