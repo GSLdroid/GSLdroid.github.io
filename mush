@@ -1,0 +1,6 @@
+git clone https://github.com/GSLdroid/GSLdroid.github.io
+# Add the files I created
+cd GSLdroid.github.io
+git add .
+git commit -m "Initial site"
+git push
