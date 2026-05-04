@@ -30,7 +30,7 @@ nav {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #2563eb;
+    color: #3a5a40;
 }
 
 .nav-links {
@@ -46,11 +46,11 @@ nav {
 }
 
 .nav-links a:hover {
-    color: #2563eb;
+    color: #3a5a40;
 }
 
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #3a5a40 0%, #8b4513 100%);
     color: #fff;
     padding: 8rem 2rem;
     text-align: center;
@@ -69,7 +69,7 @@ nav {
 .cta-button {
     display: inline-block;
     background: #fff;
-    color: #667eea;
+    color: #3a5a40;
     padding: 1rem 2rem;
     text-decoration: none;
     border-radius: 50px;
@@ -226,7 +226,7 @@ nav {
 }
 
 .service-card h3 {
-    color: #2563eb;
+    color: #3a5a40;
     margin-bottom: 1rem;
 }
 
