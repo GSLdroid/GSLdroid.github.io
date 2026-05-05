@@ -38,6 +38,8 @@
                 <h3>Bitcoin Price</h3>
                 <p class="btc-price" id="btcPrice">Loading...</p>
                 <p class="btc-currency">CAD</p>
+                <p class="btc-price-usd" id="btcPriceUSD">Loading...</p>
+                <p class="btc-currency">USD</p>
                 <button class="btc-refresh" onclick="fetchBTCPrice()">Refresh</button>
             </div>
         </div>
@@ -92,15 +94,20 @@
     <script>
         async function fetchBTCPrice() {
             const priceElement = document.getElementById("btcPrice");
+            const priceUSDElement = document.getElementById("btcPriceUSD");
             priceElement.textContent = "Loading...";
+            priceUSDElement.textContent = "Loading...";
             
             try {
-                const response = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=cad");
+                const response = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=cad,usd");
                 const data = await response.json();
-                const price = data.bitcoin.cad;
-                priceElement.textContent = "$" + price.toLocaleString("en-CA", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                const priceCAD = data.bitcoin.cad;
+                const priceUSD = data.bitcoin.usd;
+                priceElement.textContent = "$" + priceCAD.toLocaleString("en-CA", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                priceUSDElement.textContent = "$" + priceUSD.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
             } catch (error) {
                 priceElement.textContent = "Error loading price";
+                priceUSDElement.textContent = "Error loading price";
                 console.error("Error fetching BTC price:", error);
             }
         }

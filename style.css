@@ -160,8 +160,19 @@ nav {
 
 .btc-currency {
     font-size: 1.3rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     opacity: 0.95;
+}
+
+.btc-price-usd {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    background: linear-gradient(135deg, #ff0000 0%, #ffffff 50%, #0000ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
 .btc-refresh {
