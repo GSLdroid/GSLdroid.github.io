@@ -413,6 +413,131 @@ nav {
     border-bottom: none;
 }
 
+/* Shakepay Section */
+#shakepay {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+}
+
+#shakepay h2 {
+    color: #fff;
+}
+
+.shakepay-card {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    background: rgba(255,255,255,0.05);
+    padding: 3rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.shakepay-content {
+    text-align: left;
+}
+
+.shakepay-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.shakepay-content p {
+    color: rgba(255,255,255,0.9);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.shakepay-content h4 {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.shakepay-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.shakepay-features li {
+    padding: 0.7rem 0;
+    color: rgba(255,255,255,0.9);
+    font-size: 1.05rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.shakepay-features li:last-child {
+    border-bottom: none;
+}
+
+.shakepay-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #f7931a 0%, #ffab40 100%);
+    color: #fff;
+    padding: 1.2rem 2.5rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid transparent;
+}
+
+.shakepay-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(247,147,26,0.4);
+}
+
+.step-cta {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.5rem;
+    background: linear-gradient(135deg, #f7931a 0%, #ffab40 100%);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid transparent;
+}
+
+.step-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(247,147,26,0.3);
+}
+
+.shakepay-tips {
+    background: rgba(255,255,255,0.05);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.shakepay-tips h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.shakepay-tips ul {
+    list-style: none;
+    padding: 0;
+}
+
+.shakepay-tips li {
+    padding: 0.6rem 0;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.6;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.shakepay-tips li:last-child {
+    border-bottom: none;
+}
+
 .contact-info {
     text-align: center;
     max-width: 600px;
