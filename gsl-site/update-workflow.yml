@@ -1,0 +1,35 @@
+name: Update Website
+
+on:
+  repository_dispatch:
+    types: [update-site]
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Update index.html
+        if: ${{ github.event.client_payload.index_html }}
+        run: |
+          echo '${{ github.event.client_payload.index_html }}' > index.html
+
+      - name: Update style.css
+        if: ${{ github.event.client_payload.style_css }}
+        run: |
+          echo '${{ github.event.client_payload.style_css }}' > style.css
+
+      - name: Commit and push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git diff --staged --quiet || git commit -m "Update website via dispatch"
+          git push

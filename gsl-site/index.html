@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giant Steps Learning</title>
+    <link rel="stylesheet" href="style-new.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">GSL</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Giant Steps Learning</h1>
+            <p>Take bold strides in your educational journey</p>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Bitcoin Price Tracker -->
+    <section class="btc-tracker">
+        <div class="btc-tracker-content">
+            <div class="btc-logo">
+                <div class="btc-circle">
+                    <span class="btc-symbol">₿</span>
+                </div>
+            </div>
+            <div class="btc-info">
+                <h3>Bitcoin Price</h3>
+                <p class="btc-price" id="btcPrice">Loading...</p>
+                <p class="btc-currency">CAD</p>
+                <button class="btc-refresh" onclick="fetchBTCPrice()">Refresh</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Giant Steps Learning is dedicated to helping learners of all ages achieve their educational goals through innovative teaching methods and personalized support.</p>
+        </div>
+    </section>
+
+    <section id="services" class="section alt-bg">
+        <div class="container">
+            <h2>What We Offer</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Personalized Learning</h3>
+                    <p>Tailored educational plans designed around your unique learning style and goals.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Expert Guidance</h3>
+                    <p>Experienced educators providing one-on-one support and mentorship.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Flexible Scheduling</h3>
+                    <p>Learn at your own pace with schedules that fit your lifestyle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <p>Ready to take the next step? Contact us to learn more.</p>
+                <div class="contact-details">
+                    <p><strong>Email:</strong> info@giantstepslearning.com</p>
+                    <p><strong>Location:</strong> Available Online</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Giant Steps Learning. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        async function fetchBTCPrice() {
+            const priceElement = document.getElementById('btcPrice');
+            priceElement.textContent = 'Loading...';
+            
+            try {
+                const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=cad');
+                const data = await response.json();
+                const price = data.bitcoin.cad;
+                priceElement.textContent = '$' + price.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            } catch (error) {
+                priceElement.textContent = 'Error loading price';
+                console.error('Error fetching BTC price:', error);
+            }
+        }
+
+        // Fetch price on page load
+        fetchBTCPrice();
+
+        // Auto-refresh every 60 seconds
+        setInterval(fetchBTCPrice, 60000);
+    </script>
+</body>
+</html>
