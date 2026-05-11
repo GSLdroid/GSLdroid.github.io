@@ -53,59 +53,27 @@
         <div class="container">
             <h2>🐦 Latest from @GStepsLearning</h2>
             <p class="x-feed-subtitle">Follow us on X for daily Bitcoin education, tips, and #OffZero updates</p>
-            <div class="x-feed-container" id="x-feed-container">
-                <div class="x-feed-placeholder">
-                    <p>Loading tweets...</p>
-                </div>
+            
+            <!-- Static Twitter timeline embed - single load only -->
+            <div class="x-feed-container">
+                <a class="twitter-timeline" 
+                   href="https://twitter.com/GStepsLearning?ref_src=twsrc%5Etfw" 
+                   data-theme="light" 
+                   data-height="600" 
+                   data-chrome="noheader nofooter noborders transparent" 
+                   data-dnt="true">
+                   Tweets by GStepsLearning
+                </a>
             </div>
+            
             <div class="x-follow-cta">
                 <a href="https://x.com/GStepsLearning" target="_blank" rel="noopener noreferrer" class="cta-button">Follow @GStepsLearning on X →</a>
             </div>
         </div>
     </section>
 
-    <script>
-        // Alternative: Try loading widget with explicit URL
-        window.addEventListener('load', function() {
-            console.log('Page loaded, preparing X widget...');
-            
-            // Load Twitter widgets script dynamically
-            const script = document.createElement('script');
-            script.src = 'https://platform.twitter.com/widgets.js';
-            script.charset = 'utf-8';
-            script.async = true;
-            
-            script.onload = function() {
-                console.log('Twitter widgets script loaded');
-                setTimeout(function() {
-                    const container = document.getElementById('x-feed-container');
-                    if (container) {
-                        // Try with explicit widget load
-                        const widgetCode = '<a class="twitter-timeline" href="https://twitter.com/GStepsLearning?ref_src=twsrc%5Etfw" data-theme="light" data-height="600" data-chrome="noheader nofooter noborders transparent">Tweets by GStepsLearning</a>';
-                        container.innerHTML = widgetCode;
-                        
-                        // If Twitter widgets script is loaded, reload widgets
-                        if (window.twttr && window.twttr.widgets) {
-                            window.twttr.widgets.load();
-                            console.log('Twitter widgets reloaded');
-                        } else {
-                            console.error('Twitter widgets not loaded');
-                        }
-                    }
-                }, 500);
-            };
-            
-            script.onerror = function() {
-                console.error('Failed to load Twitter widgets script');
-                const container = document.getElementById('x-feed-container');
-                if (container) {
-                    container.innerHTML = '<div class="x-feed-placeholder"><p>Unable to load X feed. Please visit <a href="https://x.com/GStepsLearning" target="_blank">@GStepsLearning</a> directly.</p></div>';
-                }
-            };
-            
-            document.head.appendChild(script);
-        });
-    </script>
+    <!-- Twitter widgets script - load once at the end -->
+    <script src="https://platform.twitter.com/widgets.js" charset="utf-8" async></script>
 
     <section id="why-btc" class="section">
         <div class="container">
