@@ -48,6 +48,38 @@
         </div>
     </section>
 
+    <!-- X Feed Widget -->
+    <section class="x-feed-section">
+        <div class="container">
+            <h2>🐦 Latest from @GStepsLearning</h2>
+            <p class="x-feed-subtitle">Follow us on X for daily Bitcoin education, tips, and #OffZero updates</p>
+            <div class="x-feed-container" id="x-feed-container">
+                <div class="x-feed-placeholder">
+                    <p>Loading tweets...</p>
+                </div>
+            </div>
+            <div class="x-follow-cta">
+                <a href="https://x.com/GStepsLearning" target="_blank" rel="noopener noreferrer" class="cta-button">Follow @GStepsLearning on X →</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://platform.twitter.com/widgets.js" charset="utf-8" defer></script>
+    <script>
+        // Load X widget after page load
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const container = document.getElementById('x-feed-container');
+                if (container) {
+                    container.innerHTML = '<a class="twitter-timeline" data-theme="light" data-height="600" data-chrome="noheader nofooter noborders transparent" href="https://x.com/GStepsLearning?ref_src=twsrc%5Etfw">Tweets by GStepsLearning</a>';
+                    if (window.twttr && window.twttr.widgets) {
+                        window.twttr.widgets.load();
+                    }
+                }
+            }, 500);
+        });
+    </script>
+
     <section id="why-btc" class="section">
         <div class="container">
             <h2>Why "Get Off Zero"?</h2>
@@ -201,25 +233,54 @@
         async function fetchBTCPrice() {
             const priceElement = document.getElementById("btcPrice");
             const priceUSDElement = document.getElementById("btcPriceUSD");
+            
+            if (!priceElement || !priceUSDElement) {
+                console.error("Price elements not found");
+                return;
+            }
+            
             priceElement.textContent = "Loading...";
             priceUSDElement.textContent = "Loading...";
             
             try {
-                const response = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=cad,usd");
+                console.log("Fetching BTC price...");
+                const response = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=cad,usd", {
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
                 const data = await response.json();
+                console.log("BTC price data:", data);
+                
+                if (!data.bitcoin) {
+                    throw new Error("No bitcoin data in response");
+                }
+                
                 const priceCAD = data.bitcoin.cad;
                 const priceUSD = data.bitcoin.usd;
+                
                 priceElement.textContent = "$" + priceCAD.toLocaleString("en-CA", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
                 priceUSDElement.textContent = "$" + priceUSD.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                
+                console.log("Price updated successfully");
             } catch (error) {
+                console.error("Error fetching BTC price:", error);
                 priceElement.textContent = "Error loading price";
                 priceUSDElement.textContent = "Error loading price";
-                console.error("Error fetching BTC price:", error);
             }
         }
 
         // Fetch price on page load
-        fetchBTCPrice();
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', fetchBTCPrice);
+        } else {
+            fetchBTCPrice();
+        }
 
         // Auto-refresh every 60 seconds
         setInterval(fetchBTCPrice, 60000);

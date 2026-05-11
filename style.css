@@ -718,6 +718,63 @@ footer {
     text-decoration: underline;
 }
 
+/* X Feed Section */
+.x-feed-section {
+    background: #fff;
+    padding: 5rem 2rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.x-feed-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.x-feed-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2.5rem;
+}
+
+.x-feed-container {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    background: #f8fafc;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    min-height: 200px;
+}
+
+.x-feed-placeholder {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #666;
+}
+
+.x-feed-placeholder p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.x-follow-cta {
+    text-align: center;
+}
+
+.x-follow-cta .cta-button {
+    background: linear-gradient(135deg, #1DA1F2 0%, #0d8bd9 100%);
+    color: #fff;
+    border-color: transparent;
+}
+
+.x-follow-cta .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(29, 161, 242, 0.3);
+}
+
 @media (max-width: 768px) {
     .hero-content h1 {
         font-size: 2rem;
@@ -758,5 +815,17 @@ footer {
     
     .btc-price {
         font-size: 2.5rem;
+    }
+    
+    .x-feed-section {
+        padding: 3rem 1rem;
+    }
+    
+    .x-feed-section h2 {
+        font-size: 2rem;
+    }
+    
+    .x-feed-container {
+        padding: 1rem;
     }
 }
