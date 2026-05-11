@@ -718,7 +718,7 @@ footer {
     text-decoration: underline;
 }
 
-/* X Feed Section */
+/* X Follow Section */
 .x-feed-section {
     background: #fff;
     padding: 5rem 2rem;
@@ -739,40 +739,118 @@ footer {
     margin-bottom: 2.5rem;
 }
 
-.x-feed-container {
+/* X Follow Card */
+.x-follow-card {
     max-width: 600px;
-    margin: 0 auto 2rem;
-    background: #f8fafc;
-    border-radius: 15px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    min-height: 200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border: 2px solid #e2e8f0;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.x-feed-placeholder {
+.x-follow-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.12);
+}
+
+.x-follow-content {
     text-align: center;
-    padding: 3rem 1rem;
-    color: #666;
 }
 
-.x-feed-placeholder p {
+.x-profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.x-profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1DA1F2 0%, #0d8bd9 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(29, 161, 242, 0.3);
+}
+
+.x-logo {
+    width: 45px;
+    height: 45px;
+    color: #fff;
+}
+
+.x-profile-info {
+    text-align: left;
+}
+
+.x-profile-info h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+
+.x-profile-info > p {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 0.3rem 0;
+}
+
+.x-post-count {
+    color: #1DA1F2 !important;
+    font-weight: 600;
+}
+
+.x-follow-description {
     font-size: 1.1rem;
-    margin-bottom: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.x-featured-tags {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.x-tag {
+    background: #e8f5fe;
+    color: #1DA1F2;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.x-tag:hover {
+    transform: translateY(-2px);
+    background: #d1e9fd;
+}
+
+.x-button-large {
+    background: linear-gradient(135deg, #1DA1F2 0%, #0d8bd9 100%);
+    color: #fff;
+    border-color: transparent;
+    padding: 1.2rem 3rem;
+    font-size: 1.15rem;
+}
+
+.x-button-large:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(29, 161, 242, 0.4);
 }
 
 .x-follow-cta {
     text-align: center;
-}
-
-.x-follow-cta .cta-button {
-    background: linear-gradient(135deg, #1DA1F2 0%, #0d8bd9 100%);
-    color: #fff;
-    border-color: transparent;
-}
-
-.x-follow-cta .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(29, 161, 242, 0.3);
 }
 
 @media (max-width: 768px) {
