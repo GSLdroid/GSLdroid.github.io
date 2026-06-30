@@ -628,6 +628,25 @@ nav {
     border-radius: 10px;
 }
 
+.contact-details a {
+    color: var(--green-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.contact-details a:hover {
+    color: var(--purple-accent);
+    text-decoration: underline;
+}
+
+.contact-email-note {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin: 0.5rem 0 1.25rem;
+    line-height: 1.5;
+}
+
 footer {
     background: #0f172a;
     color: #fff;
