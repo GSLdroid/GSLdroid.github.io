@@ -1052,3 +1052,134 @@ footer {
         padding: 2rem 1.25rem;
     }
 }
+
+/* ===== AI literacy relaunch (Nov 2026) ===== */
+a.logo {
+    text-decoration: none;
+}
+
+.section-lead {
+    max-width: 800px;
+    margin: -1.5rem auto 2rem;
+    text-align: center;
+    font-size: 1.15rem;
+    color: #475569;
+}
+
+.badge {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.25rem 0.9rem;
+    border-radius: 999px;
+    background: #ede9fe;
+    color: var(--purple-deep);
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.service-card p {
+    color: #475569;
+}
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+}
+
+.approach-item {
+    padding: 1.5rem;
+    border-left: 4px solid var(--green-primary);
+    background: #fff;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.06);
+}
+
+.approach-item h3 {
+    color: var(--green-deep);
+    margin-bottom: 0.6rem;
+    font-size: 1.15rem;
+}
+
+.approach-item p {
+    color: #475569;
+}
+
+.bitcoin-note {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem;
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-radius: 10px;
+}
+
+.section .bitcoin-note h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.bitcoin-note p {
+    color: #475569;
+}
+
+.bitcoin-note a,
+.page-note a {
+    color: var(--purple-deep);
+    font-weight: bold;
+}
+
+.page-note {
+    background: #fff7ed;
+    border-bottom: 1px solid #fed7aa;
+    padding: 0.75rem 2rem;
+    text-align: center;
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+#contact .contact-info {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#contact .contact-info > p {
+    font-size: 1.1rem;
+    color: #475569;
+    margin-bottom: 1.5rem;
+}
+
+#contact .contact-details {
+    margin-bottom: 2rem;
+}
+
+#contact .cta-button {
+    background: var(--green-primary);
+    color: #fff;
+    margin-right: 0;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 5rem 1.5rem;
+    }
+    .hero-content h1 {
+        font-size: 2.4rem;
+    }
+    .hero-content h2 {
+        font-size: 1.4rem;
+    }
+    .hero-content .cta-button {
+        margin-bottom: 1rem;
+    }
+}
+
+.four-up {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.five-up {
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
